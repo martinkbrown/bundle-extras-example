@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class SecondActivity extends Activity {
 
-	EditText edit1;
-	EditText edit2;
+	TextView fullnameText;
+	EditText age;
 	RadioGroup radio;
 	RadioButton rButton;
 	
@@ -20,8 +21,8 @@ public class SecondActivity extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.second);
 	    
-	    edit1 = (EditText) findViewById(R.id.editText1);
-	    edit2 = (EditText) findViewById(R.id.editText2);
+	    fullnameText = (TextView) findViewById(R.id.userName);
+	    age = (EditText) findViewById(R.id.age);
 	    radio = (RadioGroup) findViewById(R.id.radioGroup1);
 	    
 	    Intent intent = getIntent();
@@ -30,8 +31,8 @@ public class SecondActivity extends Activity {
 		  
 	    if(bundle != null)
 	    {
-		    edit1.setText(bundle.getString("fname"));
-		    edit2.setText(bundle.getString("lname"));
+		    fullnameText.setText(bundle.getString("fname") + " " + bundle.getString("lname"));
+		    age.setText("" + bundle.getInt("default_age"));
 		    int genderSelection = bundle.getInt("gender");
 		    rButton = ((RadioButton) radio.getChildAt(genderSelection));
 		    rButton.setChecked(true);

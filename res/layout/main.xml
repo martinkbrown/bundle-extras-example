@@ -3,24 +3,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
-
+    
     <Button
         android:onClick="sendData"
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Launch 2nd Activity and Send Data" />
+        android:text="@string/launch_w_data" />
 
     <Button
         android:id="@+id/button2"
         android:onClick="launchSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Launch Second Activity" />
+        android:text="@string/launch" />
 
 </LinearLayout>
